@@ -1,0 +1,24 @@
+/*/obj
+/*/Temp
+/*/Logs
+/*/Library
+/*/*.pidb
+/*/*.csproj
+/*/*.csproj.DotSettings
+/*/*.sln
+/*/*.userprefs
+/*/*.unityproj
+/**/*.unitypackage
+/**/*.unitypackage.zip
+/**/*.unitypackage.meta
+/*/Assets/Samples*
+/*/Assets/SerializedUdonPrograms*
+/*/Assets/TextMesh Pro*
+/*/Assets/UdonSharp/Settings*
+/*/Assets/VRCWelcome*
+
+/**/*_Private*
+
+/*/Assets/VRCSDK*
+/*/Assets/Yodokorochan*
+/*/Thry/*

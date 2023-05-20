@@ -167,6 +167,12 @@
         "com.unity.nuget.newtonsoft-json": "2.0.0"
       }
     },
+    "net.kaikoga.modularizer": {
+      "version": "file:net.kaikoga.modularizer",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3912196e-432e-46a7-bcf1-86b24739a0bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModularizeDefinition.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModularizeDefinition.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModuleDefinition.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModuleDefinition.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/BaseProcessor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/BaseProcessor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/PrefabVariantProcessor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/PrefabVariantProcessor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Tools.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Tools/ModularizerTools.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Tools/ModularizerTools.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2c24f0c1857d4078b6d453f88e061a29dba00/dd/bec8b45e/Path.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2c26af2a702d4635b08fee80d04f16d43800/78/e3f2a579/VRCAvatarDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42e8e8aa5a2b47d6af3dc4f711edbcc8794600/35/6ebceb14/InteractionMode.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42e8e8aa5a2b47d6af3dc4f711edbcc8794600/7c/3152f71a/EditorUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42e8e8aa5a2b47d6af3dc4f711edbcc8794600/88/fde30647/PrefabUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/42e8e8aa5a2b47d6af3dc4f711edbcc8794600/93/ae73e890/DefaultAsset.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/93e92becec994c0fb2d76095cdd7aa152fc00/92/33bfd1bf/VRC_AvatarDescriptor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/baf0567d135e4326865d5269e8bbd9e1118200/be/174eaca6/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/baf0567d135e4326865d5269e8bbd9e1118200/dc/7342d7ad/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Ptsiox91NZ2MbTmJkRXYm4hQnU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/kaikoga/Library/Application Support/JetBrains/Rider2023.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/kaikoga/Library/Application Support/JetBrains/Rider2023.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/kaikoga/.local/share/Symbols/src&quot;
+    ]
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2019.4.31f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2019.4.31f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3912196e-432e-46a7-bcf1-86b24739a0bc" name="Changes" comment="" />
+      <created>1684287845873</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684287845873</updated>
+      <workItem from="1684287847608" duration="5398000" />
+      <workItem from="1684349957657" duration="6874000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

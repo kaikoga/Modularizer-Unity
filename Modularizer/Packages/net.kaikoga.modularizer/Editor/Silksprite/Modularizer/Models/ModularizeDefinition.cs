@@ -1,4 +1,5 @@
 using System.Linq;
+using Silksprite.Modularizer.Tools;
 using UnityEngine;
 
 namespace Silksprite.Modularizer.Models
@@ -23,9 +24,9 @@ namespace Silksprite.Modularizer.Models
                 {
                     ModuleName = $"{rootObject.name}_{skinnedMeshRenderer.gameObject.name}",
                     IsBaseModule = config.bodyRenderer == skinnedMeshRenderer,
-                    Meshes = new[]
+                    Paths = new[]
                     {
-                        skinnedMeshRenderer.sharedMesh
+                        rootObject.transform.GetRelativePath(skinnedMeshRenderer.transform)
                     }
                 }).ToArray()
             };

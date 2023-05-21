@@ -1,6 +1,7 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+using VRC.Core;
 
 namespace Silksprite.Modularizer.Tools
 {
@@ -26,6 +27,16 @@ namespace Silksprite.Modularizer.Tools
         public static void EnsureDirectory(string path)
         {
             Directory.CreateDirectory(GetDirectoryName(path));
+        }
+
+        public static string GetRelativePath(this Transform parent, Transform child)
+        {
+            var path = child.name;
+            for (var current = child.parent; current != null && current != parent; current = current.parent)
+            {
+                path = $"{current.name}/{path}";
+            }
+            return path;
         }
     }
 }

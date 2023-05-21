@@ -19,7 +19,7 @@ namespace Silksprite.Modularizer.Processors
                 modularObject.name = module.ModuleName;
                 foreach (var skinnedMeshRenderer in modularObject.GetComponentsInChildren<SkinnedMeshRenderer>(true))
                 {
-                    if (module.Meshes.Contains(skinnedMeshRenderer.sharedMesh)) continue;
+                    if (module.Paths.Contains(rootObject.transform.GetRelativePath(skinnedMeshRenderer.transform))) continue;
                     Ignore(skinnedMeshRenderer);
                 }
 

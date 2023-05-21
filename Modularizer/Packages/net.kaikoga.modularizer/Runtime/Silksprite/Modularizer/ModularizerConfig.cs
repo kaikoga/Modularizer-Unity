@@ -7,5 +7,6 @@ namespace Silksprite.Modularizer
     {
         [FormerlySerializedAs("folder")] public string exportDirectory;
         public Transform avatarRoot;
+        public bool unpackPrefab;
     }
 }

@@ -1,6 +1,3 @@
-using System.Linq;
-using Silksprite.Modularizer.Models;
-using Silksprite.Modularizer.Tools;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,31 +5,7 @@ namespace Silksprite.Modularizer.Processors
 {
     public class PrefabVariantProcessor : BaseProcessor
     {
-        public override void Process(ModularizeDefinition definition)
-        {
-            var rootObject = definition.RootObject;
-
-            foreach (var module in definition.Modules)
-            {
-                var modularObject = InstantiatePrefab(rootObject);
-                modularObject.name = module.ModuleName;
-                foreach (var skinnedMeshRenderer in modularObject.GetComponentsInChildren<SkinnedMeshRenderer>())
-                {
-                    if (module.Meshes.Contains(skinnedMeshRenderer.sharedMesh)) continue;
-                    var modularSkinnedMeshObject = skinnedMeshRenderer.gameObject;
-                    modularSkinnedMeshObject.SetActive(false);
-                    modularSkinnedMeshObject.tag = "EditorOnly";
-                }
-
-                var assetPath = BuildPrefabPath(definition.ExportPath, module.ModuleName);
-                ModularizerTools.EnsureDirectory(assetPath);
-                PrefabUtility.SaveAsPrefabAsset(modularObject, assetPath);
-
-                Object.DestroyImmediate(modularObject);
-            }
-        }
-
-        static GameObject InstantiatePrefab(GameObject gameObject)
+        protected override GameObject InstantiateModule(GameObject gameObject)
         {
             GameObject prefabRoot = null;
             if (PrefabUtility.IsPartOfPrefabInstance(gameObject))
@@ -52,6 +25,20 @@ namespace Silksprite.Modularizer.Processors
             {
                 return Object.Instantiate(gameObject);
             }
+        }
+
+        protected override void IgnoreIsolated(SkinnedMeshRenderer skinnedMeshRenderer)
+        {
+            var modularSkinnedMeshObject = skinnedMeshRenderer.gameObject;
+            modularSkinnedMeshObject.SetActive(false);
+            modularSkinnedMeshObject.tag = "EditorOnly";
+        }
+
+        protected override void IgnoreNonIsolated(SkinnedMeshRenderer skinnedMeshRenderer)
+        {
+            var modularSkinnedMeshObject = skinnedMeshRenderer.gameObject;
+            modularSkinnedMeshObject.SetActive(false);
+            // modularSkinnedMeshObject.tag = "EditorOnly";
         }
     }
 }

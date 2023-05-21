@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3912196e-432e-46a7-bcf1-86b24739a0bc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/UnpackedPrefabProcessor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/UnpackedPrefabProcessor.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Modularizer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Modularizer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/BaseProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/BaseProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/PrefabVariantProcessor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/PrefabVariantProcessor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684287845873</updated>
       <workItem from="1684287847608" duration="5398000" />
-      <workItem from="1684349957657" duration="7480000" />
+      <workItem from="1684349957657" duration="8892000" />
     </task>
     <servers />
   </component>

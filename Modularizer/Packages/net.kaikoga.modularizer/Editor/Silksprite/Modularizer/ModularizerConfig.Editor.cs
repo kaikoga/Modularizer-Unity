@@ -22,9 +22,17 @@ namespace Silksprite.Modularizer
             {
                 CreateFolder();
             }
-            if (GUILayout.Button("Test"))
+
+            if (GUILayout.Button("Modularize"))
             {
-                Process();
+                if (config.unpackPrefab)
+                {
+                    Process(new UnpackedPrefabProcessor());
+                }
+                else
+                {
+                    Process(new PrefabVariantProcessor());
+                }
             }
         }
 
@@ -33,12 +41,12 @@ namespace Silksprite.Modularizer
             ModularizerTools.SelectFolder("Select Export Directory" , ref config.exportDirectory);
         }
 
-        void Process()
+        void Process(BaseProcessor processor)
         {
             var definition = ModularizeDefinition.Build(config);
             if (definition == null) return;
 
-            new PrefabVariantProcessor().Process(definition);
+            processor.Process(definition);
         }
     }
 }

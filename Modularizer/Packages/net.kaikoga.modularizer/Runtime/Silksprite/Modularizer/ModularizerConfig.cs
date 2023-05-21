@@ -8,6 +8,7 @@ namespace Silksprite.Modularizer
         public string exportDirectory;
         public Transform avatarRoot;
         public SkinnedMeshRenderer bodyRenderer;
+        public SkinnedMeshRenderer[] renderers;
         public bool unpackPrefab;
     }
 }

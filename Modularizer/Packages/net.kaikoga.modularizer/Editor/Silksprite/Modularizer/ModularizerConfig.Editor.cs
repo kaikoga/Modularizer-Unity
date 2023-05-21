@@ -18,7 +18,7 @@ namespace Silksprite.Modularizer
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            if (GUILayout.Button("Create Folder"))
+            if (GUILayout.Button("Select Folder"))
             {
                 CreateFolder();
             }

@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3912196e-432e-46a7-bcf1-86b24739a0bc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModularizeDefinition.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModularizeDefinition.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModuleDefinition.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Models/ModuleDefinition.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/BaseProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/BaseProcessor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/PrefabVariantProcessor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Processors/PrefabVariantProcessor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Tools.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Tools/ModularizerTools.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/Tools/ModularizerTools.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Runtime/Silksprite/Modularizer/ModularizerConfig.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/net.kaikoga.modularizer/Editor/Silksprite/Modularizer/ModularizerConfig.Editor.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1684287845873</updated>
       <workItem from="1684287847608" duration="5398000" />
-      <workItem from="1684349957657" duration="6874000" />
+      <workItem from="1684349957657" duration="7480000" />
     </task>
     <servers />
   </component>

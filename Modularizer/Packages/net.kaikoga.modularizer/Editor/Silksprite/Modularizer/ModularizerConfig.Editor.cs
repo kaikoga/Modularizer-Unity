@@ -50,7 +50,7 @@ namespace Silksprite.Modularizer
         void DetectBody()
         {
             if (!config.avatarRoot) return;
-            var renderers = config.avatarRoot.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+            var renderers = config.avatarRoot.GetComponentsInChildren<Renderer>(true);
             config.renderers = renderers;
             config.bodyRenderer = renderers.FirstOrDefault(renderer => renderer.enabled);
         }

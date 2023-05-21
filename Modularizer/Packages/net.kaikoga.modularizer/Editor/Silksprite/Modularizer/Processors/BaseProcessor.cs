@@ -17,10 +17,10 @@ namespace Silksprite.Modularizer.Processors
             {
                 var modularObject = InstantiateModule(rootObject);
                 modularObject.name = module.ModuleName;
-                foreach (var skinnedMeshRenderer in modularObject.GetComponentsInChildren<SkinnedMeshRenderer>(true))
+                foreach (var renderer in modularObject.GetComponentsInChildren<Renderer>(true))
                 {
-                    if (module.Paths.Contains(rootObject.transform.GetRelativePath(skinnedMeshRenderer.transform))) continue;
-                    Ignore(skinnedMeshRenderer);
+                    if (module.Paths.Contains(rootObject.transform.GetRelativePath(renderer.transform))) continue;
+                    Ignore(renderer);
                 }
 
                 if (!module.IsBaseModule)
@@ -45,21 +45,21 @@ namespace Silksprite.Modularizer.Processors
             }
         }
 
-        void Ignore(SkinnedMeshRenderer skinnedMeshRenderer)
+        void Ignore(Renderer renderer)
         {
-            if (skinnedMeshRenderer.transform.childCount > 0 || skinnedMeshRenderer.gameObject.GetComponents<Component>().Length > 2)
+            if (renderer.transform.childCount > 0 || renderer.gameObject.GetComponents<Component>().Length > 2)
             {
-                IgnoreNonIsolated(skinnedMeshRenderer);
+                IgnoreNonIsolated(renderer);
             }
             else
             {
-                IgnoreIsolated(skinnedMeshRenderer);
+                IgnoreIsolated(renderer);
             }
         }
 
         protected abstract GameObject InstantiateModule(GameObject gameObject);
-        protected abstract void IgnoreIsolated(SkinnedMeshRenderer skinnedMeshRenderer);
-        protected abstract void IgnoreNonIsolated(SkinnedMeshRenderer skinnedMeshRenderer);
+        protected abstract void IgnoreIsolated(Renderer renderer);
+        protected abstract void IgnoreNonIsolated(Renderer renderer);
 
         static string BuildPrefabPath(string path, string moduleName) => Path.Combine(path, $"{moduleName}.prefab");
     }

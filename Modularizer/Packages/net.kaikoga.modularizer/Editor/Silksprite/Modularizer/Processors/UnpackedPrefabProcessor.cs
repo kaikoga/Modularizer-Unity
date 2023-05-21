@@ -6,8 +6,8 @@ namespace Silksprite.Modularizer.Processors
     {
         protected override GameObject InstantiateModule(GameObject gameObject) => Object.Instantiate(gameObject);
 
-        protected override void IgnoreIsolated(SkinnedMeshRenderer skinnedMeshRenderer) => Object.DestroyImmediate(skinnedMeshRenderer.gameObject);
+        protected override void IgnoreIsolated(Renderer renderer) => Object.DestroyImmediate(renderer.gameObject);
 
-        protected override void IgnoreNonIsolated(SkinnedMeshRenderer skinnedMeshRenderer) => Object.DestroyImmediate(skinnedMeshRenderer);
+        protected override void IgnoreNonIsolated(Renderer renderer) => Object.DestroyImmediate(renderer);
     }
 }

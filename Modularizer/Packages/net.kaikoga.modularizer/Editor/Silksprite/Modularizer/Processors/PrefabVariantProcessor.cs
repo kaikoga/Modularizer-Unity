@@ -27,16 +27,16 @@ namespace Silksprite.Modularizer.Processors
             }
         }
 
-        protected override void IgnoreIsolated(SkinnedMeshRenderer skinnedMeshRenderer)
+        protected override void IgnoreIsolated(Renderer renderer)
         {
-            var modularSkinnedMeshObject = skinnedMeshRenderer.gameObject;
+            var modularSkinnedMeshObject = renderer.gameObject;
             modularSkinnedMeshObject.SetActive(false);
             modularSkinnedMeshObject.tag = "EditorOnly";
         }
 
-        protected override void IgnoreNonIsolated(SkinnedMeshRenderer skinnedMeshRenderer)
+        protected override void IgnoreNonIsolated(Renderer renderer)
         {
-            var modularSkinnedMeshObject = skinnedMeshRenderer.gameObject;
+            var modularSkinnedMeshObject = renderer.gameObject;
             modularSkinnedMeshObject.SetActive(false);
             // modularSkinnedMeshObject.tag = "EditorOnly";
         }

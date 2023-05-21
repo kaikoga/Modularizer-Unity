@@ -20,7 +20,7 @@ namespace Silksprite.Modularizer.Models
             {
                 RootObject = rootObject,
                 ExportPath = config.exportDirectory,
-                Modules = rootObject.GetComponentsInChildren<SkinnedMeshRenderer>(true).Select(skinnedMeshRenderer => new ModuleDefinition
+                Modules = rootObject.GetComponentsInChildren<Renderer>(true).Select(skinnedMeshRenderer => new ModuleDefinition
                 {
                     ModuleName = $"{rootObject.name}_{skinnedMeshRenderer.gameObject.name}",
                     IsBaseModule = config.bodyRenderer == skinnedMeshRenderer,

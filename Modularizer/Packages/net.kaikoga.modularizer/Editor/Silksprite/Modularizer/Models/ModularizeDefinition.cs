@@ -22,6 +22,7 @@ namespace Silksprite.Modularizer.Models
                 Modules = rootObject.GetComponentsInChildren<SkinnedMeshRenderer>(true).Select(skinnedMeshRenderer => new ModuleDefinition
                 {
                     ModuleName = $"{rootObject.name}_{skinnedMeshRenderer.gameObject.name}",
+                    IsBaseModule = config.bodyRenderer == skinnedMeshRenderer,
                     Meshes = new[]
                     {
                         skinnedMeshRenderer.sharedMesh

@@ -23,6 +23,20 @@ namespace Silksprite.Modularizer.Processors
                     Ignore(skinnedMeshRenderer);
                 }
 
+                if (!module.IsBaseModule)
+                {
+                    foreach (var component in modularObject.GetComponents<Component>())
+                    {
+                        switch (component.GetType().FullName)
+                        {
+                            case "VRC.Core.PipelineManager":
+                            case "VRC.SDK3.Avatars.Components.VRCAvatarDescriptor":
+                                Object.DestroyImmediate(component);
+                                break;
+                        }
+                    }
+                }
+
                 var assetPath = BuildPrefabPath(definition.ExportPath, module.ModuleName);
                 ModularizerTools.EnsureDirectory(assetPath);
                 PrefabUtility.SaveAsPrefabAsset(modularObject, assetPath);

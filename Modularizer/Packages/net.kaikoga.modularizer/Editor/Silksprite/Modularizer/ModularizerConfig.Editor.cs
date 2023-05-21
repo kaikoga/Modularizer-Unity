@@ -1,3 +1,4 @@
+using System.Linq;
 using Silksprite.Modularizer.Models;
 using Silksprite.Modularizer.Processors;
 using Silksprite.Modularizer.Tools;
@@ -23,6 +24,11 @@ namespace Silksprite.Modularizer
                 CreateFolder();
             }
 
+            if (GUILayout.Button("Detect Body"))
+            {
+                DetectBody();
+            }
+
             if (GUILayout.Button("Modularize"))
             {
                 if (config.unpackPrefab)
@@ -39,6 +45,12 @@ namespace Silksprite.Modularizer
         void CreateFolder()
         {
             ModularizerTools.SelectFolder("Select Export Directory" , ref config.exportDirectory);
+        }
+
+        void DetectBody()
+        {
+            if (!config.avatarRoot) return;
+            config.bodyRenderer = config.avatarRoot.GetComponentsInChildren<SkinnedMeshRenderer>().FirstOrDefault();
         }
 
         void Process(BaseProcessor processor)

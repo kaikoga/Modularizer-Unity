@@ -5,8 +5,9 @@ namespace Silksprite.Modularizer
 {
     public class ModularizerConfig : MonoBehaviour
     {
-        [FormerlySerializedAs("folder")] public string exportDirectory;
+        public string exportDirectory;
         public Transform avatarRoot;
+        public SkinnedMeshRenderer bodyRenderer;
         public bool unpackPrefab;
     }
 }

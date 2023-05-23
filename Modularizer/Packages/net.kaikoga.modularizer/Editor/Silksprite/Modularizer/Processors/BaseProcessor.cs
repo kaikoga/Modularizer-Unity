@@ -19,7 +19,7 @@ namespace Silksprite.Modularizer.Processors
                 modularObject.name = module.ModuleName;
                 foreach (var renderer in modularObject.GetComponentsInChildren<Renderer>(true))
                 {
-                    if (module.Paths.Contains(rootObject.transform.GetRelativePath(renderer.transform))) continue;
+                    if (module.Paths.Contains(modularObject.transform.GetRelativePath(renderer.transform))) continue;
                     Ignore(renderer);
                 }
 

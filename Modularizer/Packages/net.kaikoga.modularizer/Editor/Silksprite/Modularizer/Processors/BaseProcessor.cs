@@ -1,5 +1,4 @@
 using System.IO;
-using System.Linq;
 using Silksprite.Modularizer.Models;
 using Silksprite.Modularizer.Tools;
 using UnityEditor;
@@ -19,7 +18,7 @@ namespace Silksprite.Modularizer.Processors
                 modularObject.name = module.ModuleName;
                 foreach (var renderer in modularObject.GetComponentsInChildren<Renderer>(true))
                 {
-                    if (module.Paths.Contains(modularObject.transform.GetRelativePath(renderer.transform))) continue;
+                    if (module.ModularObjectContains(modularObject, renderer)) continue;
                     Ignore(renderer);
                 }
 

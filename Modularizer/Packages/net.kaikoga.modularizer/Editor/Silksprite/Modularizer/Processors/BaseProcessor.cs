@@ -1,4 +1,5 @@
 using System.IO;
+using nadena.dev.modular_avatar.core;
 using Silksprite.Modularizer.Models;
 using Silksprite.Modularizer.Tools;
 using UnityEditor;
@@ -33,6 +34,11 @@ namespace Silksprite.Modularizer.Processors
                                 Object.DestroyImmediate(component);
                                 break;
                         }
+                    }
+
+                    if (definition.SetupMA)
+                    {
+                        modularObject.AddComponent<ModularAvatarMergeArmature>();
                     }
                 }
 

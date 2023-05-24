@@ -10,5 +10,6 @@ namespace Silksprite.Modularizer
         public Renderer bodyRenderer;
         public Renderer[] renderers;
         public bool unpackPrefab;
+        public bool setupMA = true;
     }
 }

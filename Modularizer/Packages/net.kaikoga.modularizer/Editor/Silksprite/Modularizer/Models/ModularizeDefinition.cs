@@ -9,6 +9,7 @@ namespace Silksprite.Modularizer.Models
         public GameObject RootObject { get; private set; }
         public ModuleDefinition[] Modules { get; private set; }
         public string ExportPath { get; private set; }
+        public bool SetupMA { get; private set; }
 
         public static ModularizeDefinition Build(ModularizerConfig config)
         {
@@ -28,7 +29,8 @@ namespace Silksprite.Modularizer.Models
                     {
                         rootObject.transform.GetRelativePath(skinnedMeshRenderer.transform)
                     }
-                }).ToArray()
+                }).ToArray(),
+                SetupMA = config.setupMA
             };
         }
 

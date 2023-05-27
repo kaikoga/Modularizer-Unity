@@ -21,18 +21,31 @@ namespace Silksprite.Modularizer.Models
             {
                 RootObject = rootObject,
                 ExportPath = config.exportDirectory,
-                Modules = rootObject.GetComponentsInChildren<Renderer>(true).Select(skinnedMeshRenderer => new ModuleDefinition
-                {
-                    ModuleName = $"{rootObject.name}_{skinnedMeshRenderer.gameObject.name}",
-                    IsBaseModule = config.bodyRenderer == skinnedMeshRenderer,
-                    Paths = new[]
+                Modules = config.renderers.GroupBy(renderer => renderer.moduleName)
+                    .Select(g =>
                     {
-                        rootObject.transform.GetRelativePath(skinnedMeshRenderer.transform)
-                    }
-                }).ToArray(),
+                        var renderers = g.Select(r => r.renderer).ToArray();
+                        return new ModuleDefinition
+                        {
+                            ModuleName = $"{rootObject.name}_{g.Key}",
+                            IsBaseModule = renderers.Contains(config.bodyRenderer),
+                            Paths = renderers.Select(renderer => rootObject.transform.GetRelativePath(renderer.transform)).ToArray()
+                        };
+                    }).ToArray(),
                 SetupMA = config.setupMA
             };
         }
+    }
 
+    public class ModuleDefinition
+    {
+        public string ModuleName { get; internal set; }
+        public bool IsBaseModule { get; internal set; }
+        public string[] Paths { get; internal set; }
+
+        public bool ModularObjectContains(GameObject modularObject, Renderer renderer)
+        {
+            return Paths.Contains(modularObject.transform.GetRelativePath(renderer.transform));
+        }
     }
 }

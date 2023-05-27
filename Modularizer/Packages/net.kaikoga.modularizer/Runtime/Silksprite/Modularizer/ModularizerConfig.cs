@@ -1,5 +1,5 @@
+using Silksprite.Modularizer.DataObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Silksprite.Modularizer
 {
@@ -8,7 +8,7 @@ namespace Silksprite.Modularizer
         public string exportDirectory;
         public Transform avatarRoot;
         public Renderer bodyRenderer;
-        public Renderer[] renderers;
+        public RendererMapping[] renderers;
         public bool unpackPrefab;
         public bool setupMA = true;
     }

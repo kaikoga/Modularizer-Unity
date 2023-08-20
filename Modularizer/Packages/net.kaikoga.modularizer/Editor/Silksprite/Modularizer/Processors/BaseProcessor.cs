@@ -1,4 +1,5 @@
 using System.IO;
+using System.Linq;
 using nadena.dev.modular_avatar.core;
 using Silksprite.Modularizer.Models;
 using Silksprite.Modularizer.Tools;
@@ -25,7 +26,7 @@ namespace Silksprite.Modularizer.Processors
 
                 if (!module.IsBaseModule)
                 {
-                    foreach (var component in modularObject.GetComponents<Component>())
+                    foreach (var component in modularObject.GetComponents<Component>().Where(c => c))
                     {
                         switch (component.GetType().FullName)
                         {
@@ -38,7 +39,11 @@ namespace Silksprite.Modularizer.Processors
 
                     if (definition.SetupMA)
                     {
-                        modularObject.AddComponent<ModularAvatarMergeArmature>();
+                        var animator = modularObject.GetComponentInChildren<Animator>();
+                        if (animator && animator.isHuman)
+                        {
+                            animator.GetBoneTransform(HumanBodyBones.Hips)?.parent.gameObject.AddComponent<ModularAvatarMergeArmature>();
+                        }
                     }
                 }
 

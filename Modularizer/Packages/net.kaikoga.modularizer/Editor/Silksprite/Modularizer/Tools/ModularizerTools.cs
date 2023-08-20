@@ -1,7 +1,6 @@
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using VRC.Core;
 
 namespace Silksprite.Modularizer.Tools
 {

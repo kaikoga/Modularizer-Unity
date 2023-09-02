@@ -59,17 +59,17 @@ namespace Silksprite.Modularizer.Processors
         {
             if (renderer.transform.childCount > 0 || renderer.gameObject.GetComponents<Component>().Length > 2)
             {
-                IgnoreNonIsolated(renderer);
+                IgnoreNonEmpty(renderer);
             }
             else
             {
-                IgnoreIsolated(renderer);
+                IgnoreEmpty(renderer);
             }
         }
 
         protected abstract GameObject InstantiateModule(GameObject gameObject);
-        protected abstract void IgnoreIsolated(Renderer renderer);
-        protected abstract void IgnoreNonIsolated(Renderer renderer);
+        protected abstract void IgnoreEmpty(Renderer renderer);
+        protected abstract void IgnoreNonEmpty(Renderer renderer);
 
         static string BuildPrefabPath(string path, string moduleName) => Path.Combine(path, $"{moduleName}.prefab");
     }

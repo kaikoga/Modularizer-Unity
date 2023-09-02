@@ -37,14 +37,14 @@ namespace Silksprite.Modularizer.Processors
                         }
                     }
 
-                    if (definition.SetupMA)
-                    {
-                        var animator = modularObject.GetComponentInChildren<Animator>();
-                        if (animator && animator.isHuman)
-                        {
-                            animator.GetBoneTransform(HumanBodyBones.Hips)?.parent.gameObject.AddComponent<ModularAvatarMergeArmature>();
-                        }
-                    }
+                    // if (definition.SetupMA)
+                    // {
+                    //     var animator = modularObject.GetComponentInChildren<Animator>();
+                    //     if (animator && animator.isHuman)
+                    //     {
+                    //         animator.GetBoneTransform(HumanBodyBones.Hips)?.parent.gameObject.AddComponent<ModularAvatarMergeArmature>();
+                    //     }
+                    // }
                 }
 
                 var assetPath = BuildPrefabPath(definition.ExportPath, module.ModuleName);

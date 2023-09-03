@@ -8,8 +8,10 @@ namespace Silksprite.Modularizer
         public string exportDirectory;
         public Transform avatarRoot;
         public Renderer bodyRenderer;
-        public RendererMapping[] renderers;
+        public RendererSet[] modules;
         public bool unpackPrefab;
-        public bool setupMA = true;
+        // public bool setupMA = true;
+        
+        public Renderer[] selectedRenderers;
     }
 }

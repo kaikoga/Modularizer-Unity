@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Silksprite.Modularizer.DataObjects;
+using Silksprite.Modularizer.Extensions;
 using Silksprite.Modularizer.Models;
 using Silksprite.Modularizer.Processors;
 using Silksprite.Modularizer.Tools;
@@ -44,7 +45,7 @@ namespace Silksprite.Modularizer
             if (avatarRoot != _serializedAvatarRoot.objectReferenceValue && _serializedAvatarRoot.objectReferenceValue)
             {
                 serializedObject.ApplyModifiedPropertiesWithoutUndo();
-                CollectRenderers(false);
+                CollectRenderers(_config, false);
             }
 
             EditorGUILayout.PropertyField(_serializedExportDirectory);
@@ -70,7 +71,7 @@ namespace Silksprite.Modularizer
 
             if (_config.avatarRoot && _config.modules.Any(module => module.command != RendererSet.Command.None))
             {
-                ReorderRenderers();
+                ReorderRenderers(_config);
             }
 
             using (new EditorGUI.DisabledScope(!_config.avatarRoot))
@@ -79,11 +80,11 @@ namespace Silksprite.Modularizer
                 {
                     if (GUILayout.Button("Collect Renderers"))
                     {
-                        CollectRenderers(false);
+                        CollectRenderers(_config, false);
                     }
                     if (GUILayout.Button("Reset Modules"))
                     {
-                        CollectRenderers(true);
+                        CollectRenderers(_config, true);
                     }
                 }
 
@@ -111,17 +112,13 @@ namespace Silksprite.Modularizer
             ModularizerTools.SelectFolder("Select Export Directory" , ref _config.exportDirectory);
         }
 
-        Renderer[] AllRenderers => _config.avatarRoot.GetComponentsInChildren<Renderer>(true);
-
-        string ModuleName(string moduleName) => $"{_config.avatarRoot.gameObject.name}_{moduleName}"; 
-
-        void ReorderRenderers()
+        static void ReorderRenderers(ModularizerConfig config)
         {
-            var allRenderers = AllRenderers;
+            var allRenderers = config.AllRenderers;
             var newModules = new List<RendererSet>();
-            for (var i = -1; i <= _config.modules.Length; i++)
+            for (var i = -1; i <= config.modules.Length; i++)
             {
-                RendererSet TryGetModule(int index) => index >= 0 && index < _config.modules.Length ? _config.modules[index] : null;
+                RendererSet TryGetModule(int index) => index >= 0 && index < config.modules.Length ? config.modules[index] : null;
                 var module = TryGetModule(i); 
                 var prev = TryGetModule(i - 1); 
                 var next = TryGetModule(i + 1);
@@ -129,15 +126,15 @@ namespace Silksprite.Modularizer
                 var renderers = new List<Renderer>();
                 if (module != null)
                 {
-                    renderers.AddRange(module.command == RendererSet.Command.None ? module.renderers : module.renderers.Where(renderer => !_config.selectedRenderers.Contains(renderer)));
+                    renderers.AddRange(module.command == RendererSet.Command.None ? module.renderers : module.renderers.Where(renderer => !config.selectedRenderers.Contains(renderer)));
                 }
                 if (prev?.command == RendererSet.Command.Down)
                 {
-                    renderers.AddRange(prev.renderers.Where(_config.selectedRenderers.Contains));
+                    renderers.AddRange(prev.renderers.Where(config.selectedRenderers.Contains));
                 }
                 if (next?.command == RendererSet.Command.Up)
                 {
-                    renderers.AddRange(_config.selectedRenderers.Where(next.renderers.Contains));
+                    renderers.AddRange(config.selectedRenderers.Where(next.renderers.Contains));
                 }
 
                 Renderer[] PrettifyRenderers(IEnumerable<Renderer> unsorted) => allRenderers.Where(unsorted.Contains).ToArray();
@@ -153,11 +150,11 @@ namespace Silksprite.Modularizer
 
                     if (module.command == RendererSet.Command.New)
                     {
-                        var selections = _config.selectedRenderers.Where(module.renderers.Contains).ToArray();
+                        var selections = config.selectedRenderers.Where(module.renderers.Contains).ToArray();
                         newModules.Add(new RendererSet
                         {
                             enabled = true,
-                            moduleName = ModuleName(selections.FirstOrDefault()?.gameObject.name),
+                            moduleName = config.ModuleName(selections.FirstOrDefault()?.gameObject.name),
                             renderers = PrettifyRenderers(selections),
                             isBaseModule = false,
                         });
@@ -168,26 +165,26 @@ namespace Silksprite.Modularizer
                     newModules.Add(new RendererSet
                     {
                         enabled = true,
-                        moduleName = ModuleName(renderers.FirstOrDefault()?.gameObject.name),
+                        moduleName = config.ModuleName(renderers.FirstOrDefault()?.gameObject.name),
                         renderers = PrettifyRenderers(renderers),
                         isBaseModule = false,
                     });
                 }
             }
-            _config.modules = newModules.Where(module => module.renderers.Any()).ToArray();
+            config.modules = newModules.Where(module => module.renderers.Any()).ToArray();
         }
 
-        void CollectRenderers(bool reset)
+        internal static void CollectRenderers(ModularizerConfig config, bool reset)
         {
-            if (!_config.avatarRoot) return;
+            if (!config.avatarRoot) return;
 
-            if (reset) _config.modules = Array.Empty<RendererSet>();
-            var allRenderers = AllRenderers.ToArray(); 
+            if (reset) config.modules = Array.Empty<RendererSet>();
+            var allRenderers = config.AllRenderers.ToArray(); 
             var renderers = allRenderers
-                .Where(renderer => !_config.modules.Any(module => module.renderers.Contains(renderer)))
+                .Where(renderer => !config.modules.Any(module => module.renderers.Contains(renderer)))
                 .ToArray();
             // if (!renderers.Any()) return;
-            _config.modules = _config.modules.Select(module => new RendererSet
+            config.modules = config.modules.Select(module => new RendererSet
                 {
                     enabled = module.enabled,
                     moduleName = module.moduleName,
@@ -200,9 +197,9 @@ namespace Silksprite.Modularizer
                         .Select(gi => new RendererSet
                         {
                             enabled = true,
-                            moduleName = ModuleName(gi.g.Key.name),
+                            moduleName = config.ModuleName(gi.g.Key.name),
                             renderers = gi.g.ToArray(),
-                            isBaseModule = gi.i + _config.modules.Length == 0
+                            isBaseModule = gi.i + config.modules.Length == 0
                         }))
                 .Where(module => module.renderers.Length > 0)
                 .ToArray();

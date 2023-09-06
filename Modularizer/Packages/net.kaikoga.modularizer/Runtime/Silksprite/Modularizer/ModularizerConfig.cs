@@ -14,5 +14,7 @@ namespace Silksprite.Modularizer
         // public bool setupMA = true;
         
         public Renderer[] selectedRenderers = {};
+
+        public Renderer[] AllRenderers => avatarRoot.GetComponentsInChildren<Renderer>(true);
     }
 }

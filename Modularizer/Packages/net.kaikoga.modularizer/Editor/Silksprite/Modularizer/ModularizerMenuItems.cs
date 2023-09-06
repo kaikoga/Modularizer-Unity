@@ -12,8 +12,13 @@ namespace Silksprite.Modularizer
             if (avatarRoot && !avatarRoot.GetComponent<Animator>()) avatarRoot = null;
 
             var gameObject = new GameObject(avatarRoot ? $"Modularizer_{avatarRoot.name}" : "Modularizer");
-            var modularizerConfig = gameObject.AddComponent<ModularizerConfig>();
-            modularizerConfig.avatarRoot = avatarRoot ? avatarRoot.GetComponent<Transform>() : null;
+            var config = gameObject.AddComponent<ModularizerConfig>();
+
+            if (avatarRoot)
+            {
+                config.avatarRoot = avatarRoot.GetComponent<Transform>();
+                ModularizerConfigEditor.CollectRenderers(config, true);
+            }
         }
         
         [MenuItem("GameObject/Modularizer/Modularizer Config", true, 48)]

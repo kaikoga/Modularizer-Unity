@@ -20,11 +20,5 @@ namespace Silksprite.Modularizer
                 ModularizerConfigEditor.CollectRenderers(config, true);
             }
         }
-        
-        [MenuItem("GameObject/Modularizer/Modularizer Config", true, 48)]
-        static bool ValidateModularizer()
-        {
-            return Selection.activeGameObject;
-        }
     }
 }

@@ -33,11 +33,11 @@ namespace Silksprite.Modularizer.DataObjects
                 EditorGUI.PropertyField(cell, property.FindPropertyRelative(nameof(RendererSet.enabled)));
                 line.xMin += 32f;
                 cell = line;
-                cell.width -= 124f;
+                cell.width -= 108f;
                 EditorGUI.PropertyField(cell, property.FindPropertyRelative(nameof(RendererSet.moduleName)));
                 cell.x = cell.xMax + 4f;
-                cell.width = 120f;
-                EditorGUIUtility.labelWidth = 100f;
+                cell.width = 100f;
+                EditorGUIUtility.labelWidth = 85f;
                 using (var changed = new EditorGUI.ChangeCheckScope())
                 {
                     var isBaseModule = property.FindPropertyRelative(nameof(RendererSet.isBaseModule));

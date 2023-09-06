@@ -26,7 +26,7 @@ namespace Silksprite.Modularizer.Models
                     {
                         return new ModuleDefinition
                         {
-                            ModuleName = $"{rootObject.name}_{module.moduleName}",
+                            ModuleName = module.moduleName,
                             IsBaseModule = module.isBaseModule,
                             Paths = module.renderers.Select(renderer => rootObject.transform.GetRelativePath(renderer.transform)).ToArray()
                         };

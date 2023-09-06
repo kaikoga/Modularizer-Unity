@@ -42,6 +42,10 @@ namespace Silksprite.Modularizer
         {
             var avatarRoot = _serializedAvatarRoot.objectReferenceValue;
             EditorGUILayout.PropertyField(_serializedAvatarRoot);
+            if (avatarRoot == null && _config.GetComponent<Animator>())
+            {
+                _serializedAvatarRoot.objectReferenceValue = _config.transform;
+            }
             if (avatarRoot != _serializedAvatarRoot.objectReferenceValue && _serializedAvatarRoot.objectReferenceValue)
             {
                 serializedObject.ApplyModifiedPropertiesWithoutUndo();

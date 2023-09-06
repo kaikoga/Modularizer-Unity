@@ -89,15 +89,18 @@ namespace Silksprite.Modularizer
 
                 EditorGUILayout.Separator();
 
-                if (GUILayout.Button("Modularize"))
+                using (new EditorGUI.DisabledScope(string.IsNullOrWhiteSpace(_config.exportDirectory)))
                 {
-                    if (_config.unpackPrefab)
+                    if (GUILayout.Button("Modularize"))
                     {
-                        Process(new UnpackedPrefabProcessor());
-                    }
-                    else
-                    {
-                        Process(new PrefabVariantProcessor());
+                        if (_config.unpackPrefab)
+                        {
+                            Process(new UnpackedPrefabProcessor());
+                        }
+                        else
+                        {
+                            Process(new PrefabVariantProcessor());
+                        }
                     }
                 }
             }

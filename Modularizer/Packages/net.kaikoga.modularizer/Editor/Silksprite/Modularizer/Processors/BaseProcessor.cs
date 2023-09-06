@@ -32,6 +32,7 @@ namespace Silksprite.Modularizer.Processors
                         {
                             case "VRC.Core.PipelineManager":
                             case "VRC.SDK3.Avatars.Components.VRCAvatarDescriptor":
+                            case "Silksprite.Modularizer.ModularizerConfig":
                                 Object.DestroyImmediate(component);
                                 break;
                         }

@@ -6,7 +6,7 @@ namespace Silksprite.Modularizer
     [AddComponentMenu("Modularizer/Modularizer Config")]
     public class ModularizerConfig : MonoBehaviour
     {
-        public string exportDirectory;
+        public string exportDirectory = "Assets/ModularizerPrefabs";
         public Transform avatarRoot;
         public Renderer bodyRenderer;
         public RendererSet[] modules = {};

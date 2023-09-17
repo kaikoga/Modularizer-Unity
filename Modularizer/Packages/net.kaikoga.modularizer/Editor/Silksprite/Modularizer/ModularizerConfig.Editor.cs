@@ -20,7 +20,6 @@ namespace Silksprite.Modularizer
         SerializedProperty _serializedBodyRenderer;
         SerializedProperty _serializedModules;
         SerializedProperty _serializedUnpackPrefab;
-        // SerializedProperty _serializedSetupMA;
 
         void OnEnable()
         {
@@ -30,7 +29,6 @@ namespace Silksprite.Modularizer
             _serializedAvatarRoot = serializedObject.FindProperty(nameof(ModularizerConfig.avatarRoot));
             _serializedModules = serializedObject.FindProperty(nameof(ModularizerConfig.modules));
             _serializedUnpackPrefab = serializedObject.FindProperty(nameof(ModularizerConfig.unpackPrefab));
-            // _serializedSetupMA = serializedObject.FindProperty(nameof(ModularizerConfig.setupMA));
         }
 
         void OnDisable()
@@ -59,7 +57,6 @@ namespace Silksprite.Modularizer
             }
             
             EditorGUILayout.PropertyField(_serializedUnpackPrefab);
-            // EditorGUILayout.PropertyField(_serializedSetupMA);
 
             EditorGUILayout.Separator();
 
@@ -96,7 +93,7 @@ namespace Silksprite.Modularizer
 
                 using (new EditorGUI.DisabledScope(string.IsNullOrWhiteSpace(_config.exportDirectory)))
                 {
-                    if (GUILayout.Button("Modularize"))
+                    if (GUILayout.Button("Nugumin!"))
                     {
                         if (_config.unpackPrefab)
                         {

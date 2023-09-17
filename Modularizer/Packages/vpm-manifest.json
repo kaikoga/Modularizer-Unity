@@ -25,23 +25,23 @@
       "dependencies": {}
     },
     "nadena.dev.modular-avatar": {
-      "version": "1.7.4",
+      "version": "1.7.6",
       "dependencies": {
         "com.vrchat.avatars": ">=3.2.0"
       }
     },
     "com.anatawa12.gists": {
-      "version": "0.9.0",
+      "version": "0.9.1",
       "dependencies": {}
     },
     "com.vrchat.avatars": {
-      "version": "3.2.3",
+      "version": "3.3.0",
       "dependencies": {
-        "com.vrchat.base": "3.2.3"
+        "com.vrchat.base": "3.3.0"
       }
     },
     "com.vrchat.base": {
-      "version": "3.2.3",
+      "version": "3.3.0",
       "dependencies": {}
     },
     "com.anatawa12.custom-localization-for-editor-extension": {

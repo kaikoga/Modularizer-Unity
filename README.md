@@ -1,4 +1,4 @@
-# Modularizer
+# Modularizer (a.k.a. NuguminTool)
 
 See https://kaikoga.booth.pm/items/5077401
 

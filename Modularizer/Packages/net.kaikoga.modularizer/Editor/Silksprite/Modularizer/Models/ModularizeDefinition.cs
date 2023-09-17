@@ -21,6 +21,7 @@ namespace Silksprite.Modularizer.Models
                 RootObject = rootObject,
                 ExportPath = config.exportDirectory,
                 Modules = config.modules
+                    .Where(module => module.enabled)
                     .Select(module =>
                     {
                         return new ModuleDefinition

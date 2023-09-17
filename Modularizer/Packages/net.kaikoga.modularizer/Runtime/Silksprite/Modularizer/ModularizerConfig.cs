@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Silksprite.Modularizer
 {
-    [AddComponentMenu("Nugumin/Nugumin Config")]
+    [AddComponentMenu("NuguminTool/NuguminTool Config")]
     public class ModularizerConfig : MonoBehaviour
     {
         public string exportDirectory = "Assets/Modular Prefabs";

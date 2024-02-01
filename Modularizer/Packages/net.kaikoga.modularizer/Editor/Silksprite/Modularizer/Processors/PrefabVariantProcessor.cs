@@ -29,16 +29,24 @@ namespace Silksprite.Modularizer.Processors
 
         protected override void IgnoreEmpty(Renderer renderer)
         {
+#if UNITY_2022_2_OR_NEWER
+            Object.DestroyImmediate(renderer.gameObject);
+#else
             var modularSkinnedMeshObject = renderer.gameObject;
             modularSkinnedMeshObject.SetActive(false);
             modularSkinnedMeshObject.tag = "EditorOnly";
+#endif
         }
 
         protected override void IgnoreNonEmpty(Renderer renderer)
         {
-            var modularSkinnedMeshObject = renderer.gameObject;
-            modularSkinnedMeshObject.SetActive(false);
+#if UNITY_2022_2_OR_NEWER
+            Object.DestroyImmediate(renderer);
+#else
+            // var modularSkinnedMeshObject = renderer.gameObject;
+            renderer.enabled = false;
             // modularSkinnedMeshObject.tag = "EditorOnly";
+#endif
         }
     }
 }

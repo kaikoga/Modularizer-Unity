@@ -24,18 +24,17 @@ namespace Silksprite.Modularizer.Processors
                     Ignore(renderer);
                 }
 
-                if (!module.IsBaseModule)
+                foreach (var component in modularObject.GetComponents<Component>().Where(c => c))
                 {
-                    foreach (var component in modularObject.GetComponents<Component>().Where(c => c))
+                    switch (component.GetType().FullName)
                     {
-                        switch (component.GetType().FullName)
-                        {
-                            case "VRC.Core.PipelineManager":
-                            case "VRC.SDK3.Avatars.Components.VRCAvatarDescriptor":
-                            case "Silksprite.Modularizer.ModularizerConfig":
-                                Object.DestroyImmediate(component);
-                                break;
-                        }
+                        case "VRC.Core.PipelineManager":
+                        case "VRC.SDK3.Avatars.Components.VRCAvatarDescriptor":
+                            if (!module.IsBaseModule) Object.DestroyImmediate(component);
+                            break;
+                        case "Silksprite.Modularizer.ModularizerConfig":
+                            Object.DestroyImmediate(component);
+                            break;
                     }
                 }
 

@@ -74,7 +74,7 @@ namespace Silksprite.Modularizer.Processors
             foreach (var child in modularObject.GetComponentsInChildren<Transform>())
             {
                 var components = child.GetComponents<Component>()
-                    .Where(c=> c is not Transform)
+                    .Where(c=> !(c is Transform))
                     .ToArray();
                 
                 foreach (var component in components)
@@ -169,7 +169,7 @@ namespace Silksprite.Modularizer.Processors
                 .ToArray();
 
             var componentsToDestroy = modularObject.GetComponentsInChildren<Component>()
-                .Where(component => component is not Transform)
+                .Where(component => !(component is Transform))
                 .Except(componentReferences)
                 .ToArray();
                 

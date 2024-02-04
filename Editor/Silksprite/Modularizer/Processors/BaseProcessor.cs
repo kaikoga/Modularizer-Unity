@@ -76,7 +76,7 @@ namespace Silksprite.Modularizer.Processors
                 var components = child.GetComponents<Component>()
                     .Where(c=> !(c is Transform))
                     .ToArray();
-                
+
                 foreach (var component in components)
                 {
                     var isVrcPhysBone = false;
@@ -111,6 +111,8 @@ namespace Silksprite.Modularizer.Processors
                             if (boneIsEffective[i])
                             {
                                 references.Add(bone);
+                                // also add possibly end bone
+                                if (bone.childCount == 1) references.Add(bone.GetChild(0));
                             }
                             else
                             {

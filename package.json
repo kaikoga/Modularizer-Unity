@@ -1,8 +1,8 @@
 {
   "name": "net.kaikoga.modularizer",
-  "url": "https://vpm.kaikoga.net/net.kaikoga.modularizer/net.kaikoga.modularizer-1.0.0.zip",
+  "url": "https://vpm.kaikoga.net/net.kaikoga.modularizer/net.kaikoga.modularizer-1.1.0.zip",
   "displayName": "NuguminTool",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "unity": "2019.4",
   "description": "Create Modular Avatar prefabs from composed FBX asset.",
   "vrchatVersion": "2022.1.1",
